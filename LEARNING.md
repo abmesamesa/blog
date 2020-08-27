@@ -1,6 +1,7 @@
 LEARNING
 ========
 
+- [2020-05-14] I am getting more and more interested in cloud engineering.
 - [2020-04-16] I am preparing my next project in the risk management domain.
 - [2020-04-15] Simple approach to refactoring a class too large. [Link](https://martinfowler.com/articles/class-too-large.html).
 - [2020-04-01] Three articles to understand test doubles. [Link 1](https://jmauerhan.wordpress.com/2018/10/04/the-5-types-of-test-doubles-and-how-to-create-them-in-phpunit/) - [Link 2](https://blog.frankdejonge.nl/testing-without-mocking-frameworks/) - [Link 3](https://martinfowler.com/articles/mocksArentStubs.html).
