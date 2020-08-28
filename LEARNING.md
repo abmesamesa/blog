@@ -1,6 +1,7 @@
 LEARNING
 ========
 
+- [2020-08-28] Finally I am styding about cloud computing with AWS starting by an overwhelming overview of the many services available.
 - [2020-05-14] I am getting more and more interested in cloud engineering.
 - [2020-04-16] I am preparing my next project in the risk management domain.
 - [2020-04-15] Simple approach to refactoring a class too large. [Link](https://martinfowler.com/articles/class-too-large.html).
