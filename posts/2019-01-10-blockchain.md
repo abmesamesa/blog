@@ -1,7 +1,7 @@
 A gentle introduction to Blockchain
 ===================================
 
-Abrahán Mesa - Posted on January 10, 2019
+Abrahán Mesa - Posted on January 10, 2019
 
 At some point I became interested on the blockchain. Here there are some notes I took while learning.
 
@@ -302,7 +302,7 @@ Blockchain uses a peer to peer (P2P) network vs Client-Server used by traditiona
 Block structure
 
 -   Block Header: Metadata about the block like the hash value.
--   Block Transactions: all the block transactions information. You can explore block content using sites like [blockexplorer.com](https://abrahan.dev/a-gentle-intro-to-blockchain/blockexplorer.com)\
+-   Block Transactions: all the block transactions information. You can explore block content using sites like [blockexplorer.com](https://blockexplorer.com)\
     The first transaction in the list (the oldest) is called "Coinbase". The interface renders the data in a pretty way, but as programmers will use data programmatically, in json format for instance.
 
 *Exploring a block of bitcoin data.*
