@@ -1,12 +1,6 @@
 What am I learning
 ==================
 
-## Cloud engineering
-
-- [2020-08-30] I created my free tier AWS account - I secured my account (IAM checklist).
-- [2020-08-28] Finally, I am studying about cloud computing with AWS starting by an overwhelming overview of the many services available.
-- [2020-05-14] I am getting more and more interested in cloud engineering.
-
 ## Other topics
 
 - [2020-04-16] I am preparing my next project in the risk management domain.
