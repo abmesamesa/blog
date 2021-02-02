@@ -1,6 +1,7 @@
 Timeline
 ========
 
+- [2021-02-01] I am combining different sources of knowledge to learn about AWS, VueJs, real time applications and software architecture.
 - [2021-01-13] Starting the new year learning Docker (Finally).
 - [2020-04-16] I am preparing my next project in the risk management domain.
 - [2020-04-15] Simple approach to refactoring a class too large. [Link](https://martinfowler.com/articles/class-too-large.html).
