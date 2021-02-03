@@ -77,3 +77,32 @@ Understanding these components:
 - Not great for data archiving, dynamic data, file system required, structured data that need to be queried
 
 #### Amazon glacier
+
+- Low cost, long term storage
+- It does not provide instant access to data
+- Organized in vaults (containers) and archives (any object as in S3)
+- Managed via API
+- Data is encrypted
+- Vault data policies and vault lock policies can be configured
+
+#### EC2 instance storage
+
+- Local disk drives associated to an instance
+- Ephemeral
+- Instance stopped of terminated the data is lost
+- Instance reboot keep the data
+- Included in the price of an instance
+- Very high I/O
+- Ideal for cache, buffer
+
+#### Elastic block store EBS
+
+- Persistent and durable data storage
+- Can be attached to an EC2 instance, but they remain independent
+- Backups can be made (Snapshots) stored in S3, incrementally
+- A snapshot can be used to recreate an EBS volume
+- EBS volumes are replicated by AZ
+- General purpose SSD EBS volume can be used to store databases
+- Offers encryption on selected volumes types
+- Can be accessed by one instance at a time  
+- Not recommended for temporary storage or multi-instance storage access
