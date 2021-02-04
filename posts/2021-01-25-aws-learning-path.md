@@ -98,6 +98,8 @@ Understanding these components:
 #### Elastic block store EBS
 
 - Persistent and durable data storage
+- Data stored in blocks instead of objects
+- Low latency access  
 - Can be attached to an EC2 instance, but they remain independent
 - Backups can be made (Snapshots) stored in S3, incrementally
 - A snapshot can be used to recreate an EBS volume
@@ -106,3 +108,15 @@ Understanding these components:
 - Offers encryption on selected volumes types
 - Can be accessed by one instance at a time  
 - Not recommended for temporary storage or multi-instance storage access
+
+#### Elastic file system
+
+- Low latency access
+- Can be accessed by several instances at once
+- Supports NFS 4.1/0
+
+#### CloudFront
+
+- Is a CDN (Content delivery network)
+- Cached data in edge locations
+- Origin data can come from S3
