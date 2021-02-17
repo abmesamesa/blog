@@ -120,3 +120,65 @@ Understanding these components:
 - Is a CDN (Content delivery network)
 - Cached data in edge locations
 - Origin data can come from S3
+
+**2021-02-16**
+
+### Aws VPC and networking components
+
+Topics
+
+- Virtual Private Clouds (VPCs)
+- Subnets
+- Route Tables
+- Network Access Control Lists (NACLs)
+- Security Groups
+- NAT Gateways
+- Bastion Hosts
+- VPN and Direct connection
+- VPC Peering
+- AWS Transit Gateway
+
+Objectives
+
+- Confidently architect a VPC across multiple availability zones within a Region
+- Explain different networking components commonly used within AWS VPCs
+- Secure your VPCs, helping you to protect your resources within them
+- Assess which method of connectivity to your VPCs would be best in different scenarios
+
+#### VPC
+
+- Your own isolated cloud inside the aws cloud.
+- It allows to provision and deploy your application within the vpc.
+- Up to 5 VPCs per region, per account. 
+- When creating a Vpc you need to give it a name, and a CIDR block address.
+
+#### Subnets
+
+- Segment vpc infrastructure into many networks
+- Any subnet create within the VPC need to reside inside the CIDR block address of the VPC.
+- Can be public or private subnets. By default, they are private (can't access Internet).
+- Public subnets are accessible from the outside (Internet) as web servers. Web servers would have 2 IP addresses (one internal in the range of the Subnet CIDR block and one public)
+- Private subnets are inaccessible by default (Backend, databases)
+- To make public a subnet we need to create an Internet Gateway attached to our VPC and create a route in the route table of the subnet mapping any route not known by the route table and the internet gateway.
+- The first 4 addresses of the subnet CIDR block, and the last one are reserved and can not be used.
+
+#### NACLs
+
+- Network access control list: network level firewall
+- By default, accept all the traffic
+- The can control Inbound and Outbound traffic
+- Stateless by design
+
+#### Segurity groups
+
+- Instance level firewall
+- Stateful by design
+
+#### NAT Gateway
+
+- It allows traffic originated within you EC2 instance from the internet, so for instance you can keep your instances up to date while keeping them within a private subnet.
+
+#### Bastion host
+
+- Gain access to instance in a private subnet from the internet through a secured machine
+- Best practice is to use ssh key forwarding to store the private keys of the keys in the machine of the engineer (and not in the bastion host)
