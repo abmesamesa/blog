@@ -148,7 +148,7 @@ Objectives
 #### VPC
 
 - Your own isolated cloud inside the aws cloud.
-- It allows to provision and deploy your application within the vpc.
+- It allows provisioning and deploying your application within the vpc.
 - Up to 5 VPCs per region, per account. 
 - When creating a Vpc you need to give it a name, and a CIDR block address.
 
@@ -161,6 +161,7 @@ Objectives
 - Private subnets are inaccessible by default (Backend, databases)
 - To make public a subnet we need to create an Internet Gateway attached to our VPC and create a route in the route table of the subnet mapping any route not known by the route table and the internet gateway.
 - The first 4 addresses of the subnet CIDR block, and the last one are reserved and can not be used.
+- You can associate multiple subnets to the same route table.
 
 #### NACLs
 
