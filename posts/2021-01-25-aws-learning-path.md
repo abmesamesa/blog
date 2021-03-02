@@ -167,10 +167,10 @@ Objectives
 
 - Network access control list: network level firewall
 - By default, accept all the traffic
-- The can control Inbound and Outbound traffic
+- It can control Inbound and Outbound traffic
 - Stateless by design
 
-#### Segurity groups
+#### Security groups
 
 - Instance level firewall
 - Stateful by design
