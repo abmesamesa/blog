@@ -148,9 +148,14 @@ Objectives
 #### VPC
 
 - Your own isolated cloud inside the aws cloud.
+- An AWS user's separate network segment within the AWS cloud
 - It allows provisioning and deploying your application within the vpc.
 - Up to 5 VPCs per region, per account. 
 - When creating a Vpc you need to give it a name, and a CIDR block address.
+- The smallest option Amazon VPC provides, in terms of the number of assignable IP addresses, is a /28 netmask, which creates 16 address. Taking into account the 5 that AWS uses, this actually creates 11 assignable addresses.
+- The largest option Amazon VPC provides, in terms of the number of assignable IP addresses, is a /16 netmask.
+- A public IP address is essentially the location for any external messages to reach resources in your VPC subnet. Without it, external resources would not know how to reach you. The other choices are the services provided by internet gateways, network ACLs, and customer gateways.
+- Your VPC has an implicit router, and a main route table that you can modify. Each subnet you create must be associated with a route table. Adding an internet gateway and adding a route to that IGW facilitates traffic out to the Internet for a public subnet. NAT instance and NAT gateways are provided to allow instances in private subnets to gain internet access.
 
 #### Subnets
 
@@ -160,12 +165,14 @@ Objectives
 - Public subnets are accessible from the outside (Internet) as web servers. Web servers would have 2 IP addresses (one internal in the range of the Subnet CIDR block and one public)
 - Private subnets are inaccessible by default (Backend, databases)
 - To make public a subnet we need to create an Internet Gateway attached to our VPC and create a route in the route table of the subnet mapping any route not known by the route table and the internet gateway.
-- The first 4 addresses of the subnet CIDR block, and the last one are reserved and can not be used.
-- You can associate multiple subnets to the same route table.
+- The first 4 addresses of the subnet CIDR block, and the last one are reserved and can not be used (routing, dns and future use).
+- You can associate multiple subnets to the same route table. A subnet can be assigned to one route table.
+- A route table is included in the VPCs default route table, and all custom route tables. It cannot be deleted, and allows communication between VPC subnets.
 
 #### NACLs
 
 - Network access control list: network level firewall
+- Act as a firewall for associated subnets, controlling both inbound and outbound traffic at the subnet level and supports allow rules and deny rules.  
 - By default, accept all the traffic
 - It can control Inbound and Outbound traffic
 - Stateless by design
@@ -173,7 +180,11 @@ Objectives
 #### Security groups
 
 - Instance level firewall
+- Act as a firewall for associated Amazon EC2 instances, controlling both inbound and outbound traffic at the instance level and supports allow rules only  
 - Stateful by design
+- They evaluate all rules before deciding whether to allow traffic.
+- They can be added or removed from EC2-VPC instances at any time.
+- They do not support allow and deny rules for inbound and outbound traffic.
 
 #### NAT Gateway
 
@@ -183,3 +194,35 @@ Objectives
 
 - Gain access to instance in a private subnet from the internet through a secured machine
 - Best practice is to use ssh key forwarding to store the private keys of the keys in the machine of the engineer (and not in the bastion host)
+
+#### VPN
+
+- A virtual private gateway is a VPN component that serves as an AWS-managed VPC endpoint within the VPN connection
+- The virtual private gateway is the VPN endpoint located within a VPC. It operates similarly to an internet gateway, and is AWS managed.
+- You can use a private virtual interface in AWS Direct Connect to establish a secure, private connection outside the public internet between an on-premises data center and a VPC.
+
+**2021-03-09**
+
+### Database fundamentals
+
+- Obtain a solid understanding of the following Amazon database services: Amazon RDS, DynamoDB, ElastiCache, and Neptune
+- Create an Amazon RDS database
+- Create a DynamoDB database
+- Create an ElastiCache cluster
+- Create an Amazon Neptune database
+
+### RDS
+
+- Relation database service
+- Provision, create and scales relational databases
+- Backup and patch automatically
+- Many RDS engines as Mysql, MariaDb, PostgreeSql, Amazon aurora, Oracle or SQL server...
+- Many compute instances available (cpu, memory) as general purpose (T) or memory optimized (X, Z and R)
+- Possible Multi AZ within the same region to provide a failover option, the update is made synchronously
+- Multi AZ DNS update takes between 60 and 120 seconds.
+  - Patching maintenances on the primary instance
+  - Host failure in the primary instance
+  - AZ of the primary database fails
+  - Primary instances rebooted with failover
+  - Primary db instance class has changed
+- Auto scaling volumes with EBS
