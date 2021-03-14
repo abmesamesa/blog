@@ -161,3 +161,11 @@ AWS Lambda provides you with computing power in the cloud by allowing you to exe
 - Lambda code can be triggered by other AWS services.
 - AWS Lambda supports Java, Go, PowerShell, Node.js, C#/.NET, Python, and Ruby. There is a Runtime API that allows you to use other programming languages to author your functions.
 - Lambda code can be authored via the console.
+
+### Elastic Beanstalk
+
+It is an orchestration service that allows you to deploy a web application at the touch of a button by spinning up (or provisioning) all of the services that you need to run your application.
+
+- Elastic Beanstalk is found under the Compute section of the AWS Management Console.
+- Elastic Beanstalk can be used to deployed web applications developed with Java, .NET, PHP, Node.js, Python, Ruby, Go, and Docker.
+- You can run your applications in a VPC.
