@@ -136,3 +136,28 @@ Tips
 - Your AWS resources are automatically provisioned in a default VPC.
 - There are no additional charges for creating and using the VPC. 
 - You can store data in Amazon S3 and restrict access so that it’s only accessible from instances in your VPC.
+
+### VPC ACL
+
+- A network access control list (ACL) defines the set of firewall rules for controlling traffic coming in and out of subnets in your VPC.
+- The default network ACL allows all inbound and outbound IPv4 traffic.
+- Inbound/Outbound rules are numbered and ordered. The lowest numbered rule is evaluated first.
+- Network ACLs are stateless.
+
+### Compute Power In The Cloud
+Compute power in the cloud is a faster way to build applications, providing:
+
+- no servers to manage (i.e. serverless)
+- ability to continuously scale
+- ability to run code on demand in response to events
+- pay only when your code runs
+
+### Lambda
+
+AWS Lambda provides you with computing power in the cloud by allowing you to execute code without standing up or managing servers.
+
+- Lambdas have a time limit of 15 minutes.
+- The code you run on AWS Lambda is called a “Lambda function.”
+- Lambda code can be triggered by other AWS services.
+- AWS Lambda supports Java, Go, PowerShell, Node.js, C#/.NET, Python, and Ruby. There is a Runtime API that allows you to use other programming languages to author your functions.
+- Lambda code can be authored via the console.
