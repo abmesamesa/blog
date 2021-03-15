@@ -169,3 +169,97 @@ It is an orchestration service that allows you to deploy a web application at th
 - Elastic Beanstalk is found under the Compute section of the AWS Management Console.
 - Elastic Beanstalk can be used to deployed web applications developed with Java, .NET, PHP, Node.js, Python, Ruby, Go, and Docker.
 - You can run your applications in a VPC.
+
+**2021-03-15**
+
+### Storage in the Cloud
+
+Storage and database services in the cloud provide a place for companies to collect, store, and analyze the data they've collected over the years at a massive scale.
+
+Storage & Database Services
+- Amazon Simple Storage Service (Amazon S3)
+- Amazon Simple Storage Service (Amazon S3) Glacier
+- DynamoDB
+- Relational Database Service (RDS)
+- Redshift
+- ElastiCache
+- Neptune
+- Amazon DocumentDB
+
+A compromise between durability, scalability and availability.
+
+### S3 & Glacier
+
+Amazon Simple Storage Service (or S3) is an object storage system in the cloud.
+
+S3 use cases
+
+- Static website
+- CDN
+- Backup and recovery
+- Archiving big data
+- Application data
+- Hybrid cloud storage
+
+Storage Classes: S3 offers several storage classes, which are different data access levels for your data at certain price points.
+
+- S3 Standard
+- S3 Glacier
+- S3 Glacier Deep Archive
+- S3 Intelligent-Tiering
+- S3 Standard Infrequent Access
+- S3 One Zone-Infrequent Access
+
+A single object can be up to 5 terabytes in size.
+You can enable Multi-Factor Authentication (MFA) Delete on an S3 bucket to prevent accidental deletions.
+S3 Acceleration can be used to enable fast, easy, and secure transfers of files over long distances between your data source, and your S3 bucket.
+
+### DynamoDB
+
+DynamoDB is a NoSQL document database service that is fully managed. Unlike traditional databases, NoSQL databases, are schema-less. Schema-less simply means that the database doesn't contain a fixed (or rigid) data structure.
+
+- DynamoDB is found under the Database section on the AWS Management Console.
+- DynamoDB can handle more than 10 trillion requests per day.
+- DynamoDB is serverless as there are no servers to provision, patch, or manage.
+- DynamoDB supports key-value and document data models.
+- DynamoDB synchronously replicates data across three AZs in an AWS Region.
+- DynamoDB supports GET/PUT operations using a primary key.
+
+### Relational Database Service (RDS)
+
+RDS (or Relational Database Service) is a service that aids in the administration and management of databases. RDS assists with database administrative tasks that include upgrades, patching, installs, backups, monitoring, performance checks, security, etc.
+
+Database Engine Support
+- Oracle
+- PostgreSQL
+- MySQL
+- MariaDB
+- SQL Server
+
+Features
+- failover
+- backups
+- restore
+- encryption
+- security
+- monitoring
+- data replication
+- scalability
+
+### Redshift
+Redshift is a cloud data warehousing service to help companies manage big data. Redshift allows you to run fast queries against your data using SQL, ETL, and BI tools. Redshift stores data in a column format to aid in fast querying.
+
+- Redshift delivers great performance by using machine learning.
+- Redshift Spectrum is a feature that enables you to run queries against data in Amazon S3.
+- Redshift encrypts and keeps your data secure in transit and at rest.
+- Redshift clusters can be isolated using Amazon Virtual Private Cloud (VPC).
+
+### Content Delivery In The Cloud
+
+A Content Delivery Network (or CDN) speeds up delivery of your static and dynamic web content by caching content in an Edge Location close to your user base.
+
+Benefits
+- The benefits of a CDN includes:
+- low latency
+- decreased server load
+- better user experience
