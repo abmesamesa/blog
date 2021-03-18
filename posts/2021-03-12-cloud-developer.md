@@ -325,3 +325,115 @@ An IAM user has permanent credentials that can be used to interact with AWS serv
 
 4. IAM Policy
    An access control policy is a JSON file that defines the resource to grant access, level of access, and allowed actions. You can attach a policy to multiple users, groups, or roles to assign permissions to AWS resources.
+
+**2021-03-18**
+
+### Route 53
+Route 53 is a cloud domain name system (DNS) service that has servers distributed around the globe used to translates human-readable names like www.google.com into the numeric IP addresses like 74.125.21.147.
+
+Features
+
+- scales automatically to manage spikes in DNS queries
+- allows you to register a domain name (or manage an existing)
+- routes internet traffic to the resources for your domain
+- checks the health of your resources
+- Route 53 allows you to route users based on the user’s geographic location.
+
+### EC2 Auto Scaling
+
+EC2 Auto Scaling is a service that monitors your EC2 instances and automatically adjusts by adding or removing EC2 instances based on conditions you define in order to maintain application availability and provide peak performance to your users.
+
+Features
+- Automatically scale in and out based on needs.
+- Included automatically with Amazon EC2.
+- Automate how your Amazon EC2 instances are managed.
+- EC2 Auto Scaling adds instances only when needed, optimizing cost savings.
+- EC2 predictive scaling removes the need for manual adjustment of auto scaling parameters over time.
+
+### Elastic Load Balancing
+
+Elastic Load Balancing automatically distributes incoming application traffic across multiple servers.
+
+Elastic Load Balancer is a service that:
+
+- Balances load between two or more servers
+- Stands in front of a web server
+- Provides redundancy and performance
+- Elastic Load Balancing works with EC2 Instances, containers, IP addresses, and Lambda functions.
+- You can configure Amazon EC2 instances to only accept traffic from a load balancer.
+
+Application Load balancer
+
+Choose an Application Load Balancer when you need a flexible feature set for your web applications with HTTP and HTTPS traffic. Operating at the request level, Application Load Balancers provide advanced routing and visibility features targeted at application architectures, including microservices and containers.
+
+Network load balancer
+
+Choose a Network Load Balancer when you need ultra-high performance, TLS offloading at scale, centralized certificate deployment, support for UDP, and static IP addresses for your application. Operating at the connection level, Network Load Balancers are capable of handling millions of requests per second securely while maintaining ultra-low latencies.
+
+### Messaging in the Cloud
+
+There are often times that users of your applications need to be notified when certain events happen. Notifications, such as text messages or emails can be sent through services in the cloud. The use of the cloud offers benefits like lowered costs, increased storage, and flexibility.
+
+### Simple Notification Service
+Amazon Simple Notification Service (or SNS) is a cloud service that allows you to send notifications to the users of your applications. SNS allows you to decouple the notification logic from being embedded in your applications and allows notifications to be published to a large number of subscribers.
+
+- SNS uses a publish / subscribe model.
+- SNS can publish messages to Amazon SQS queues, AWS Lambda functions, and HTTP/S webhooks.
+- SNS Topic names are limited to 256 characters.
+- A notification can contain only one message.
+
+### Queues
+A queue is a data structure that holds requests called messages. Messages in a queue are commonly processed in order, first in, first out (or FIFO).
+
+Messaging queues improve:
+
+- performance
+- scalability
+- user experience
+
+### Simple Queue Service
+Amazon Simple Queue Service (SQS) is a fully managed message queuing service that allows you to integrate queuing functionality in your application. SQS offers two types of message queues: standard and FIFO.
+
+- send messages
+- store messages
+- receive messages
+- FIFO queues support up to 300 messages per second.
+- FIFO queues guarantee the ordering of messages.
+- Standard queues offer best-effort ordering but no guarantees.
+- Standard queues deliver a message at least once, but occasionally more than one copy of a message is delivered.
+
+### Containers
+
+OS level virtualization allows us to run multiple isolated processes in parallel. A container is an isolated process that consists of the following items, all bundled into one package:
+
+- the application code,
+- the required dependencies (e.g. libraries, utilities, configuration files), and
+- the necessary runtime environment to run the application.
+
+Each container is an independent component that can run on its own and be moved from environment to environment.
+
+- Containers make it easier for developers to create, deploy, and run applications on different hardware and platforms, quickly and easily.
+- Containers share a single kernel and share application libraries.
+- Containers cause a lower system overhead as compared to Virtual Machines.
+
+Docker
+
+Docker is a (container runtime) tool that helps to build, test, and run containers. You can build containers locally using a command-line utility, Docker Desktop. If there are multiple containers running individual services of an application, you will need to use Docker Compose utility to specify dependent relationships between containers.
+
+Docker Image
+
+An image (or Docker image) is a portable auto-generated template that contains a set of instructions to create a container. An image can be instantiated multiple numbers of times to create multiple containers.
+
+Dockerfile
+
+A text file containing commands to create an image. In other words, Docker generates images by reading the commands from a Dockerfile.
+
+### ECS (Elastic container service)
+
+ECS is an orchestration service used for automating deployment, scaling, and managing of your containerized applications. ECS works well with Docker containers by:
+
+- launching and stopping Docker containers
+- scaling your applications
+- querying the state of your applications
+- You can schedule long-running applications, services, and batch processes using ECS.
+- Docker is the only container-runtime platform supported by Amazon ECS. Other container-runtime tools available in the industry are Rocket, LXD, OpenVZ, any a few more.
