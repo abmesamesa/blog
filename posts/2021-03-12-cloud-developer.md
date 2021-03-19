@@ -437,3 +437,37 @@ ECS is an orchestration service used for automating deployment, scaling, and man
 - querying the state of your applications
 - You can schedule long-running applications, services, and batch processes using ECS.
 - Docker is the only container-runtime platform supported by Amazon ECS. Other container-runtime tools available in the industry are Rocket, LXD, OpenVZ, any a few more.
+
+### Cloud Trail
+Cloud Trail allows you to audit (or review) everything that occurs in your AWS account. Cloud Trail does this by recording all the AWS API calls occurring in your account and delivering a log file to you.
+
+CloudTrail provides event history of your AWS account activity, including:
+
+- who has logged in
+- services that were accessed
+- actions performed
+- parameters for the actions
+- responses returned
+
+This includes actions taken through the AWS Management Console, AWS SDKs, command line tools, and other AWS services.
+
+- CloudTrail shows results for the last 90 days.
+- You can create up to five trails in an AWS region.
+
+### Cloud Watch
+
+Cloud Watch is a service that monitors resources and applications that run on AWS by collecting data in the form of logs, metrics, and events.
+
+Features
+- There are several useful features:
+- Collect and track metrics
+- Collect and monitor log files
+- Set alarms and create triggers to run your AWS resources
+- React to changes in your AWS resources
+- Metrics are provided automatically for a number of AWS products and services.
+
+### Cloud Formation
+AWS Cloud Formation allows you to model your entire infrastructure in a text file template allowing you to provision AWS resources based on the scripts you write.
+
+- Cloud Formation templates are written using JSON or YAML.
+- You can still individually manage AWS resources that are part of a CloudFormation stack.
