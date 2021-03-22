@@ -471,3 +471,20 @@ AWS Cloud Formation allows you to model your entire infrastructure in a text fil
 
 - Cloud Formation templates are written using JSON or YAML.
 - You can still individually manage AWS resources that are part of a CloudFormation stack.
+
+### AWS Command Line Interface (CLI)
+The AWS CLI (or Command Line Interface) allows you to access and control services running in your AWS account from the command line. To use the CLI, simply download, install, and configure it.
+
+- The AWS CLI allows you to work with AWS services in a programmatic manner
+
+In order to use the aws cli:
+- Install AWS CLI
+- Create an admin iam user (AdministratorAccess policy) with programmatic access
+- Configure the profile (called default in that case) `aws configure --profile default`
+- Export the variables `export AWS_CONFIG_FILE=~/.aws/config` and `export AWS_SHARED_CREDENTIALS_FILE=~/.aws/credentials`
+- Check the configuration with `aws configure list`
+- Test the credential by using a simple command like `aws iam list-users`
+- Create a bucket with `aws s3api create-bucket --bucket my-bucket-name --acl public-read-write --region eu-west-3 --profile default --create-bucket-configuration LocationConstraint=eu-west-3`
+- Upload a file `aws s3api put-object --bucket my-bucket-name --key name-in-bucket --body path/to/file --profile default`
+- Delete a file `aws s3api delete-object --bucket my-bucket-name --key name-in-bucket`
+- Delete the bucket `aws s3api delete-bucket --bucket my-bucket-name --profile default`
