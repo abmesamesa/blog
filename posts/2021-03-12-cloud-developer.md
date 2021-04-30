@@ -488,3 +488,90 @@ In order to use the aws cli:
 - Upload a file `aws s3api put-object --bucket my-bucket-name --key name-in-bucket --body path/to/file --profile default`
 - Delete a file `aws s3api delete-object --bucket my-bucket-name --key name-in-bucket`
 - Delete the bucket `aws s3api delete-bucket --bucket my-bucket-name --profile default`
+
+**2021-04-23**
+
+### Tips for creating a RESTful API
+
+API - Application program interface
+
+- Use plural, consistent nouns and no verbs.
+- Version the api `host/api/v1/books/`
+- Paginate lists `host/api/v1/books/?offset=40&limit=100`
+- Responses send status codes
+- Responses send a data format
+- Error payloads includes useful messages
+
+### Consumable API
+
+- Consumable APIs are accessible from outside the organisation
+- No consumable APIs aren't accessible to those outside
+
+### Persisting
+
+Some terrible ideas or options:
+
+- RAM (Random Access Memory): Data can be accessed quickly, but is erased once the server restarts. It may be okay to use RAM when prototyping, and later replace it with a database.
+- Hard Drive Disk: Data remains after server restarts, but is specific to that server (not shared across servers).
+- Race Condition: When an application’s behavior is dependent on other uncontrollable events. This is an issue with storing data on disks or RAM of multiple servers.
+- Relational Database: can store at scale, improve search runtime, and maintain relationships between data fields. We recommend using a database for storing data.
+
+Basic concepts about databases:
+
+- B-Tree: a generalization of a binary search tree, which stores sorted data, but can have more than 2 child nodes.
+- Bloom Filters: a data structure that is useful for determining if an item is probably in a data set, or definitely not in the data set. Bloom filters don’t actually store the data themselves.
+- primary key and foreign key: The primary consists of one or more column in a table that are unique to each record (each row). A foreign key in a table contains the primary key of another table.
+
+Files
+
+- File stores allow for archiving data. In AWS, the file store is called S3, and the archive resource is called “glacier”.
+- Content Delivery Network (CDN): are a network of proxy servers that are placed closer to end users to deliver data and compute. CDNs reduce latency for end users.
+- SignedURLs allow clients to send and receive data by directly communicating with the file store. This saves the server from using its bandwidth to serve as the intermediary that transmits data to and from the client. This is faster for clients as well.
+- Buckets: a simple directory-like system in which to store data.
+
+**2021-04-26**
+
+### Access buckets via console
+
+```bash
+aws s3 ls [s3://bucketname] [--profile profile-name]
+```
+
+We can create roles, groups and permissions.
+
+We can attach groups to users and roles to services to give a specific set of permissions to some kind of users (like developers), to some kind of services (like a s3 bucket)
+
+### Notes
+
+- Create “dev” resources: Use the “dev” set of infrastructure (set of servers, filestores, databases) for development, and a separate set of infrastructure for production.
+- AES 256: Advanced Encryption Standard with a 256-bit key. This is a popular encryption standard.
+- CORS: Cross Origin Resource Sharing: defines how a client can interact with a resource, and what the client can and cannot do with that resource. Setting the CORS policy of our S3 bucket allows our client to communicate with the S3 bucket using the SignedURL pattern.
+- Use environment variables to store your username and password, to avoid hard-coding username and password information in your code.
+- Avoid committing your passwords to git. Use .gitignore to define files that you do not want to commit to git.
+- IAM user role: an IAM role can give a user a set of permissions to access one or more services.
+- IAM service role: an IAM role gives a service a set of permissions to access one or more services.
+
+### Elastic Beanstalk
+
+- Install the EB cli
+- `eb init` creates a beanstalk config file
+- We add a deployment artifact target within this file so that EB knows which code to be deployed
+```yaml
+deploy:
+  artifact: ./www/Archive.zip
+```
+- `eb create` creates the environment in aws infrastructure and upload the application.
+- `eb deploy application-name` will deploy your artifact.
+
+**2021-04-28**
+
+### Auth
+
+- Password encryption in transit
+- Password encryption in database
+- Recommended way: Salted (extra random data), hashed (jumbled text) strings using bcrypt (at this time is a good one way encryption algorithm)
+
+### JWT
+
+- Once the user authenticated we send a json web token.
+- The client will send the token along with each request.
