@@ -1,5 +1,5 @@
-Notes
-=====
+BLOG
+====
 
 From time to time I take notes or I write a post about what I am learning.
 
