@@ -616,3 +616,36 @@ Architectural style where our application is composed of several modules that ca
 - Cost-effective.
 - Parallel development.
 - Flexibility.
+
+### Properties of Microservices
+
+Communication
+- Services communicate through a network
+- REST is currently the most-commonly used network interface
+
+Independently Deployed
+- Deployment to one service should not affect another
+
+Fault tolerant
+- Diligence in writing code that can anticipate when another microservice isn’t working
+
+### How to make a decision
+
+- Dependency graphs are one way to help us visualize and make an informed decision
+- We often have to use additional context with regards to business functionality to weigh decisions
+- Database complexity should also be considered for refactors. Services that seem simple may have complicated refactor strategies with their databases.
+
+### Microservice Benefits
+- Scale
+- Development in Parallel
+- Cost Effectiveness
+- Flexibility
+
+### Microservice Properties
+- Communication
+- Independently Deployed
+- Fault tolerant
+
+### Refactor Strategies
+- Dependency Graph as a starting point to understand downstream effects of modules
+- Strangler Pattern as an approach to how we gradually refactor our code in pieces
