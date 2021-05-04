@@ -649,3 +649,39 @@ Fault tolerant
 ### Refactor Strategies
 - Dependency Graph as a starting point to understand downstream effects of modules
 - Strangler Pattern as an approach to how we gradually refactor our code in pieces
+
+### Docker terms
+
+Base Image  
+A set of common dependencies built into a Docker image that acts as a starting point to build an application’s Docker images to reduce build times
+
+Container  
+Grouped software dependencies and packages that make it easier and more reliable to deploy software
+
+Container Registry  
+A centralized place to store container images
+
+Docker-compose  
+A tool used to run multiple Docker containers at once; often used to specify dependent relationships between containers
+
+Dockerfile  
+A file containing instructions on how to translate an application into an image that can be run in containers
+
+Ephemeral  
+Software property where an application is expected to be short-lived
+
+Image  
+A snapshot of dependencies and code used by Docker containers to run an application
+
+### Docker container registry
+
+As GitHub, DockerHub is a centralized place to store our images.
+
+We can create a repository in DockerHub
+
+We take our local image un put it into our docker hub.
+```bash
+docker tag local_image_name user_name/repository_name
+# we should login to execute the next command
+docker push user_name/repository_name
+```
