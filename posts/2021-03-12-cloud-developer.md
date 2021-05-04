@@ -575,3 +575,44 @@ deploy:
 
 - Once the user authenticated we send a json web token.
 - The client will send the token along with each request.
+
+**2021-05-04**
+
+### Monolith vs Microservice
+
+Monolith
+- Utilize a powerful, more costly machine
+- Codebase is centralized and easy manage
+- Code is easily shared across the project
+- Scoped for worst-case usage across all parts of the application
+
+Microservice
+- Utilize smaller, cost-effective machines for what we need
+- Flexibility to implement logic in a way that makes sense for the team and business
+- Lean to be targeting a specific business purpose
+- Interfaces set up for building out other applications
+- Try not to overcommit and pay for resources that aren't needed
+
+### Some considerations of microservices
+
+Business Requirements Drive Teams: Teams can be organized around business needs and have a clearer focus on customer requirements. There is clear ownership on who owns what.
+
+Teams Can Work in Parallel: Since projects are deployed independently, teams can develop and deploy code without stepping on each others' toes.
+
+Flexibility in Technology: We are not limited to a certain technology and can choose what may work best for the business need or team.
+
+### Considerations for Not Using Microservices
+System Complexity: Rather than deploying a single application, we would be deploying multiple modules separately. There is more overhead in setting up projects.
+
+Network Latency: By introducing a network between modules, we have increased latency in application performance and will find it harder to debug our application.
+
+Difficulty with Debugging: We can no longer rely on a stack trace or tools that can help us pinpoint where a bug is. We may end up relying on logging to find causes of issues.
+
+### What is a microservice
+Architectural style where our application is composed of several modules that can be developed and deployed independently.
+
+- Different applications communicates through networks.
+- Scale is more easy.
+- Cost-effective.
+- Parallel development.
+- Flexibility.
